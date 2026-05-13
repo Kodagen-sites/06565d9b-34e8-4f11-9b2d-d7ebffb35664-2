@@ -3,20 +3,21 @@ import { FadeUp } from "@/components/motion/FadeUp";
 
 export function PageHero({
   eyebrow,
-  title,
-  body,
+  h1,
+  subhead,
   imageSeed
 }: {
   eyebrow: string;
-  title: string;
-  body?: string;
-  imageSeed: string;
+  h1: string;
+  subhead?: string;
+  imageSeed?: string;
 }) {
+  const seed = imageSeed ?? eyebrow.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   return (
     <section className="relative pt-44 lg:pt-52 pb-24 lg:pb-32 px-6 lg:px-10 bg-white overflow-hidden">
       <div className="absolute right-0 top-0 w-[55%] h-full opacity-90">
         <img
-          src={`https://picsum.photos/seed/${imageSeed}/1600/1000`}
+          src={`https://picsum.photos/seed/${seed}/1600/1000`}
           alt=""
           className="w-full h-full object-cover"
         />
@@ -35,12 +36,12 @@ export function PageHero({
           </p>
         </FadeUp>
         <TextReveal as="h1" className="h-display text-[clamp(2.5rem,6vw,5.5rem)] text-ink-900 leading-[1.02] tracking-tightest max-w-[22ch]">
-          {title}
+          {h1}
         </TextReveal>
-        {body ? (
+        {subhead ? (
           <FadeUp delay={0.2}>
             <p className="mt-8 text-base md:text-lg text-ink-700 leading-relaxed max-w-[58ch]">
-              {body}
+              {subhead}
             </p>
           </FadeUp>
         ) : null}
