@@ -1,0 +1,9 @@
+{
+  "mode": "live-generate",
+  "attempted_at": "2026-05-13T00:00:00Z",
+  "image_model": "gemini-3.1-flash-image-preview",
+  "video_model": "veo-3.1-lite",
+  "outcome": "rate_limit_exhausted_free_tier",
+  "fallback": "picsum.photos seeded per slot",
+  "note": "GEMINI_API_KEY present but free-tier quota for image generation is 0/day. All image slots populated via Picsum (https://picsum.photos/seed/{slot}/{w}/{h}) per kodagen overrides §ASSET MODE. Hero remains a styled, parallax + grain composition over a Picsum-sourced architectural still; no CSS-gradient placeholder is used. Re-run `npm run gen:all` with a paid Gemini key to upgrade to scroll-scrubbed Veo hero."
+}
